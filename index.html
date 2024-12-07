@@ -28,15 +28,29 @@
                     <option>All</option>
                 </select>
                 <input placeholder="Search-Amazon" class="search-input">
-                <div class="search-icon">
+                <div class="search-icon" onclick="searchAmazon()">
                     <i class="fa-solid fa-magnifying-glass"></i>
                 </div>
+                <script>
+                    function searchAmazon() {
+                        const query = document.querySelector('.search-input').value;
+                        alert(`You searched for: ${query}`);
+                    }
+                </script>
+                
             </div>
 
             <div class="nav-signin border">
-                <p ><span>Hello, sign in</span></p>
+                <p><span>Hello, sign in</span></p>
                 <p class="navsignin-sec">Account & Lists</p>
+                <div class="dropdown">
+                    <a href="#">Your Account</a>
+                    <a href="#">Your Orders</a>
+                    <a href="#">Your Wishlist</a>
+                    <a href="#">Sign Out</a>
+                </div>
             </div>
+            
 
             <div class="navreturn border">
                 <p ><span>Returns</span></p>
@@ -67,6 +81,15 @@
                 Shop Deals in Electronics
             </div>
         </div>
+
+        <button id="dark-mode-toggle">Toggle Dark Mode</button>
+
+        <script>
+            document.getElementById('dark-mode-toggle').onclick = function () {
+                document.body.classList.toggle('dark-mode');
+            };
+        </script>
+        
 
     </header>
 
@@ -136,9 +159,7 @@
     </div>
 
     <footer>
-            <div class="foot-panel1">
-                Back to Top
-            </div>
+            <a href="#top" class="back-to-top">↑</a>
 
             <div class="foot-panel2">
                 <ul>

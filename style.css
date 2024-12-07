@@ -4,6 +4,37 @@
     box-sizing: border-box;
 }
 
+/** mobile use **/
+
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .nav-search {
+        width: 100%;
+        margin: 10px 0;
+    }
+
+    .shop {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .box {
+        width: 90%;
+    }
+}
+
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+}
+
 .navbar {
     height: 60px;
     background-color: #0F1111;
@@ -107,10 +138,37 @@ span{
     font-size: 0.7rem ;
 }
 
-.navsignin-sec{
-    font-size: 0.85rem;
-    font-weight: 700;
+.nav-signin {
+    position: relative;
 }
+
+.dropdown {
+    display: none;
+    position: absolute;
+    background-color: white;
+    color: black;
+    top: 100%;
+    left: 0;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 10px;
+    z-index: 10;
+}
+
+.dropdown a {
+    display: block;
+    margin: 5px 0;
+    text-decoration: none;
+    color: #333;
+}
+
+.dropdown a:hover {
+    color: #ff9900;
+}
+
+.nav-signin:hover .dropdown {
+    display: block;
+}
+
 
 /**box5**/
 span{
@@ -169,6 +227,10 @@ span{
     display: flex;
     justify-content: center;
     align-items: flex-end;
+    position: relative;
+    text-align: center;
+    color: white;
+    font-size: 1.5rem;
 }
 
 .hero-message {
@@ -181,6 +243,9 @@ span{
     justify-content: center;
     font-size: 0.85rem;
     margin-bottom: 20px;
+    position: relative;
+    z-index: 2;
+    font-weight: 500;
 }
 
 .hero-message a {
@@ -203,6 +268,10 @@ span{
     background-color: white;
     padding: 20px 0px 15px;
 }
+.box:hover{
+    background-color: #fadc8f;
+    border: 2px solid black;
+}
 
 .box-img{
     height: 300px;
@@ -216,6 +285,12 @@ span{
     margin-right: 1rem;
 }
 
+.box-content p:hover {
+    color: #ff9900;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
 .box-content p {
     color: #007185;
 }
@@ -223,18 +298,35 @@ span{
 /**footer**/
 
 footer{
-    margin-top: 15px;
+    margin-top: auto;
+    width: 100%;
 }
 
-.foot-panel1{
-    background-color: #37475a;
+.back-to-top {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #ff9900;
     color: white;
+    border-radius: 50%;
     height: 50px;
-    display: flex;
+    width: 50px;
     justify-content: center;
     align-items: center;
-    font-size: 0.85rem;
+    font-size: 20px;
+    text-decoration: none;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
 }
+
+.back-to-top:hover {
+    background: #cc7a00;
+}
+
+body:hover .back-to-top {
+    display: flex;
+}
+
 
 .foot-panel2{
     background-color: #222f3d;
@@ -286,3 +378,24 @@ ul a {
 .copyright{
     padding-top: 5px;
 }
+
+/** dark mode**/
+body.dark-mode {
+    background-color: #121212;
+    color: #ffffff;
+}
+
+body.dark-mode .box {
+    background-color: #333;
+    color: #ccc;
+}
+
+body.dark-mode .hero-message{
+    background-color: #333;
+    color: #ccc;
+}
+
+body.dark-mode footer {
+    background-color: #222;
+}
+
